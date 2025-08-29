@@ -2,9 +2,12 @@
 
 namespace App\Models;
 
+use App\Observers\OrganizationObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
+#[ObservedBy(OrganizationObserver::class)]
 class Organization extends Model
 {
     protected $fillable = [

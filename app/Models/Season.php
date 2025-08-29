@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use App\Observers\SeasonObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[ObservedBy(SeasonObserver::class)]
 class Season extends Model
 {
     use SoftDeletes;
